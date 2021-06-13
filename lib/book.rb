@@ -1,10 +1,30 @@
 class Book
     attr_accessor :title, :author, :publisher
-    
-    def initialize(title:, author:, publisher:)
+
+    @@all = []
+    @@reading_list = []
+
+    def initialize(title:"no title", author: "no author", publisher:"no publisher")
         @title = title
         @author = author
         @publisher = publisher
 
-     end 
+        @@all << self
+        
+    end
+    
+    def self.all
+        @@all
+    end
+
+    def self.clear
+       @@all.clear
+    end
+
+   
+
+    def self.reading_list
+        @@reading_list
+    end
+
 end
