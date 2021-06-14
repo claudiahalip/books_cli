@@ -70,7 +70,14 @@ RSpec.describe Book do
         end
     end
 
-   
+    describe ".add_to_reading_list" do 
+        it "adds Book instance into @@list_reading class variable " do
+            reading_list = Book.reading_list
+            reading_list << subject
+            expect(reading_list).to include(subject)
+        end
+
+    end
     
     describe ".reading_list" do
         it "returns the class variable @@reading_list" do
