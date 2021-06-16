@@ -10,7 +10,6 @@ class Book
         @publisher = publisher
 
         @@all << self
-        
     end
     
     def self.all
@@ -18,12 +17,12 @@ class Book
     end
 
     def self.clear
-       @@all.clear
+        @@all.clear
     end
 
-    # def self.add_to_reading_list(book)
-    #     @@reading_list << book
-    # end
+    def self.add_to_reading_list(book)
+        @@reading_list << book
+    end
 
     def self.reading_list
         @@reading_list

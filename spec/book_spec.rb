@@ -30,7 +30,11 @@ RSpec.describe Book do
             expect(book.publisher).to eq("no publisher") 
         end
     end 
-    
+
+    it "has a #initialize method" do
+        allow(Book).to receive(:initialize)
+    end
+
     describe " #initialize" do
         let(:book) {describe_class = Book.new}
         it "save the object into @@all global variable after initialization" do
@@ -38,8 +42,7 @@ RSpec.describe Book do
            expect(Book.all).to include(book)
         end
     end
-
-
+    
     describe " @@all " do
         it "is initialized as an empty array" do
             all = Book.class_variable_set(:@@all, [])
@@ -47,12 +50,19 @@ RSpec.describe Book do
         end
     end
 
+    it "has a .all method" do
+        allow(Book).to receive(:all)
+    end
 
     describe ".all" do
         it "returns the class variable @@all" do
             Book.class_variable_set(:@@all, [subject])
             expect(Book.all).to match_array([subject])
         end
+    end
+
+    it "has a .clear method" do
+        allow(Book).to receive(:clear)
     end
     
     describe ".clear" do
@@ -70,13 +80,21 @@ RSpec.describe Book do
         end
     end
 
+    it "has a .add_to_reading_list method" do
+        allow(Book).to receive(:add_to_reading_list)
+    end
+
     describe ".add_to_reading_list" do 
-        it "adds Book instance into @@list_reading class variable " do
-            reading_list = Book.reading_list
-            reading_list << subject
-            expect(reading_list).to include(subject)
+        
+        it "adds Book instance into @@reading_list class variable " do
+            Book.add_to_reading_list(subject)
+            expect(Book.reading_list).to include(subject)
         end
 
+    end
+
+    it "has a .reading_list method" do
+        allow(Book).to receive(:reading_list)
     end
     
     describe ".reading_list" do
