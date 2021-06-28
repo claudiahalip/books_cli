@@ -25,15 +25,15 @@ Start the application by running:
 ## How to use the program
 
 Book_CLI will provide all of the necessary prompts - they are listed here:
-You will be brought to a menu: 
-Instructions:
-To exit the program type 'exit'.
-To search for books write down your query.
-To see your reading list type 'reading list'.
-After introducing the query the application will only pull 5 books at a time. 
-A book can be selected by the number associated with the book.
-You can see the selection made by typing 'reading list'.
-You also can make a new search, make a new selection or exit the program. 
+- You will be brought to a menu: 
+- Instructions:
+- To exit the program type 'exit'.
+- To search for books write down your query.
+- To see your reading list type 'reading list'.
+- -After introducing the query the application will only pull 5 books at a time. 
+- A book can be selected by the number associated with the book.
+- You can see the selection made by typing 'reading list'.
+- You also can make a new search, make a new selection or exit the program. 
 
 
 
@@ -49,15 +49,16 @@ You also can make a new search, make a new selection or exit the program.
 4. create start file inside bin
 
 5. create the files inside the lib:
-      -a file (api.rb) API class will make calls to the API
-      -a file (book.rb) Book class create book objects, keep the track of the book object attributes, save book objects, keep track of all book objects
-      -a file (cli.rb)  CLI class will interact with the user, control the flow of the application
-      -a file (ReadingList.rb) ReadingList class will keep track of all the book objects saved into a reding list 
+      - a file (api.rb) API class will make calls to the API
+      - a file (book.rb) Book class create book objects, keep the track of the book object attributes, save book objects, keep track of all book objects
+      - a file (cli.rb)  CLI class will interact with the user, control the flow of the application
+      - a file (ReadingList.rb) ReadingList class will keep track of all the book objects saved into a reding list 
   
 6.  The book object will have the following attributes:
-      -title
-      -author
-      -publisher
+      - title
+      - author
+      - publisher
+
 7.  The Book class will have 
       - a class method "all" that will get all the Book objects
       - a class method "clear" that will clear the array of all objects
