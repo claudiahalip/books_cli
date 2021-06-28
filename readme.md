@@ -1,26 +1,26 @@
-##Book_CLI
+## Book_CLI
 
 BOOK_CLI is a command line application that allows you to use the Google Books API to search for books and construct a reading list.
 
-##Installation
+## Installation
 Ensure that you have Ruby installed properly
 Make sure that you have all necessary gems by running:
 
-gem install net/http 
-gem install json
-gem install rspec
+<gem install net/http >
+<gem install json>
+<gem install rspec>
 
-##Starting the program
+## Starting the program
 
 Start the application by running:
 
- ruby bin/start
+ <ruby bin/start>
 
-##Start the test by running:
+## Start the test by running:
 
-rspec
+<rspec>
 
-##How to use the program
+## How to use the program
 
 Book_CLI will provide all of the necessary prompts - they are listed here:
 You will be brought to a menu: 
