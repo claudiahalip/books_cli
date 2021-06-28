@@ -6,7 +6,7 @@ BOOK_CLI is a command line application that allows you to use the Google Books A
 Ensure that you have Ruby installed properly
 Make sure that you have all necessary gems by running:
 
-<gem install net/http >
+` gem install net/http `
 
 ` gem install json `
 
@@ -16,7 +16,7 @@ Make sure that you have all necessary gems by running:
 
 Start the application by running:
 
- <ruby bin/start>
+ ` ruby bin/start `
 
 ## Start the test by running:
 
@@ -39,28 +39,27 @@ You also can make a new search, make a new selection or exit the program.
 
 ## CLI application plan:
 
-1.getting the Google Book API endpoint
+1. getting the Google Book API endpoint
    "https://www.googleapis.com/books/v1/volumes?q=#{search_quirey}&maxResults=5&key=#{ENV["API_KEY"]}"
 
-    getting an API_KEY 
+2. create the project folder and initialize with rspec for tests
 
-2.create the project folder and initialize with rspec for tests
+3. create the folders inside the project(bin, lib, environment.rb, readme.md, .env, .gitignore)
 
-3.create the folders inside the project(bin, lib, environment.rb, readme.md, .env, .gitignore)
+4. create start file inside bin
 
-4.create start file inside bin
-
-5.create the files inside the lib:
-  -a file (api.rb) that will make calls to the API
-  -a file (book.rb) that will create book objects, keep the track of the book object attributes, save book objects, keep track of the readeing book
-  -a file (cli.rb)  that will interact with the user, control the flow of the application
+5. create the files inside the lib:
+      -a file (api.rb) API class will make calls to the API
+      -a file (book.rb) Book class create book objects, keep the track of the book object attributes, save book objects, keep track of all book objects
+      -a file (cli.rb)  CLI class will interact with the user, control the flow of the application
+      -a file (ReadingList.rb) ReadingList class will keep track of all the book objects saved into a reding list 
   
-6.a book object will have the following attributes:
-    -title
-    -author
-    -publisher
-  The Book class will have 
-    - a class method "all" that will get all the Book objects
-    - a class method "clear" that will clear the array of all objects
+6.  The book object will have the following attributes:
+      -title
+      -author
+      -publisher
+7.  The Book class will have 
+      - a class method "all" that will get all the Book objects
+      - a class method "clear" that will clear the array of all objects
     
     
