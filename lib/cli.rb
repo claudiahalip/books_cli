@@ -11,11 +11,11 @@ class CLI
         puts "Instructions:"
         puts "To exit the program type 'exit'."
         puts "To search for books write down your query."
-        puts "To see your reading list type 'reading list'"
+        puts "To see your reading list type 'reading list'."
 
         Book.clear
         user_input = gets.strip.downcase
-        if user_input == "%" || user_input == " "
+        if user_input == "%" || user_input == "*"
             puts "Invalid query, try again!"
             menu
         elsif user_input == "exit"
@@ -32,8 +32,6 @@ class CLI
             input = gets.strip.to_i - 1
             if input.between?(0,Book.all.length-1)
                 select_a_book(input)
-            else
-                menu
             end
             puts "---------------------"
             menu
