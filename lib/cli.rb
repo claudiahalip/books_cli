@@ -15,7 +15,7 @@ class CLI
 
         Book.clear
         user_input = gets.strip.downcase
-        if user_input == "%" || user_input == "*"
+        if user_input == "%" 
             puts "Invalid query, try again!"
             menu
         elsif user_input == "exit"
@@ -27,8 +27,10 @@ class CLI
         else
             API.fetch_books(user_input) 
             display_list_of_books
-            puts "To add a book into your reading list type the associated number with the book."
+            puts "Instructions:"
+            puts "To add a book into your reading list type the associated number with the book(any number between 1-5)."
             puts "To exit, see your reading list, or continue searching, press any other key. "
+            
             input = gets.strip.to_i - 1
             if input.between?(0,Book.all.length-1)
                 select_a_book(input)
@@ -46,26 +48,22 @@ class CLI
                 puts "Publishing company: #{book.publisher}"
                 puts "---------------------"
             end
-        else
-            puts "Try again!"
-            puts "---------------------"
-            puts "\n"
         end
     end
 
     def select_a_book(input)
-        Book.add_to_reading_list(Book.all[input])
+        ReadingList.add_to_reading_list(Book.all[input])
         puts "Your choice is saved on your Reading List."
     end
 
 
     def display_reading_list
-        if  Book.reading_list == []
+        if  ReadingList.reading_list == []
             puts "There is no selection made."
             puts "---------------------"
         else
             puts "YOUR READING LIST:"
-            Book.reading_list.each do |book|
+            ReadingList.reading_list.each do |book|
                 puts "Title: #{book.title}"
                 puts "Author: #{book.author}"
                 puts "Publishing company: #{book.publisher}"

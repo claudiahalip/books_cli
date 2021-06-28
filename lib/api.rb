@@ -6,10 +6,8 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         book_response = JSON.parse(response)
-
-        if book_response["error"]
-            puts "Error #{book_response["error"]["code"]} : #{book_response["error"]["message"]}"
-        else
+        
+        if book_response["items"]
             array_of_books = book_response["items"]
             
             array_of_books.each do |book|
@@ -20,6 +18,9 @@ class API
                     :publisher => book["volumeInfo"]["publisher"] == nil ?  "no publisher" : book["volumeInfo"]["publisher"]
                 )
             end
+        else
+            puts "Invalid query, please try again!"
+            
         end
     end
     
