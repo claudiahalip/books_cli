@@ -7,7 +7,9 @@ Ensure that you have Ruby installed properly
 Make sure that you have all necessary gems by running:
 
 <gem install net/http >
+
 <gem install json>
+
 <gem install rspec>
 
 ## Starting the program
@@ -18,7 +20,7 @@ Start the application by running:
 
 ## Start the test by running:
 
-<rspec>
+ <rspec>
 
 ## How to use the program
 
@@ -35,7 +37,7 @@ You also can make a new search, make a new selection or exit the program.
 
 
 
-CLI application plan:
+## CLI application plan:
 
 1.getting the Google Book API endpoint
    "https://www.googleapis.com/books/v1/volumes?q=#{search_quirey}&maxResults=5&key=#{ENV["API_KEY"]}"
