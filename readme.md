@@ -8,9 +8,9 @@ Make sure that you have all necessary gems by running:
 
 <gem install net/http >
 
-<gem install json>
+` gem install json `
 
-<gem install rspec>
+` gem install rspec `
 
 ## Starting the program
 
@@ -20,7 +20,7 @@ Start the application by running:
 
 ## Start the test by running:
 
- <rspec>
+ ` rspec `
 
 ## How to use the program
 
