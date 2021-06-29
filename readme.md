@@ -18,16 +18,20 @@ Start the application by running:
 
  ` ruby bin/start `
 
-## Start the test by running:
- 
+## Run the tests
+
+ for running all the tests:
+
  ` rspec `
- or
+
+ for running tests by files:
+
  ` rspec spec/api_spec.rb  `
 
  ` rspec spec/cli_spec.rb  `
 
  ` rspec spec/book_spec.rb  `
- 
+
  ` rspec spec/readingList_spec.rb  `
 
 
