@@ -1,6 +1,7 @@
 require './lib/cli.rb'
 require './lib/book.rb'
 require './lib/api.rb'
+require './lib/ReadingList.rb'
 
 
 RSpec.describe CLI do
@@ -25,8 +26,8 @@ RSpec.describe CLI do
     describe " #select_a_book method " do
         let(:book) {instance_double('Book')}
         it "saves the instance book inside the global variable @@reading_list" do
-            Book.class_variable_set(:@@reading_list, [book])
-            expect(Book.reading_list).to match_array([book])
+            ReadingList.class_variable_set(:@@reading_list, [book])
+            expect(ReadingList.reading_list).to match_array([book])
         end
         it "prints a message for the user" do
             expect do

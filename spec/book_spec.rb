@@ -1,4 +1,5 @@
 require './lib/book.rb'
+require './lib/ReadingList.rb'
 
 RSpec.describe Book do
     subject {described_class.new(:title => "Home",:author => "Sue Green", :publisher => "Algonquin")}
@@ -73,34 +74,4 @@ RSpec.describe Book do
         end
     end
 
-    describe " @@reading_list " do
-        it "is initialized as an empty array" do
-            reading_list = Book.class_variable_get(:@@reading_list)
-            expect(reading_list).to match_array([])
-        end
-    end
-
-    it "has a .add_to_reading_list method" do
-        allow(Book).to receive(:add_to_reading_list)
-    end
-
-    describe ".add_to_reading_list" do 
-        
-        it "adds Book instance into @@reading_list class variable " do
-            Book.add_to_reading_list(subject)
-            expect(Book.reading_list).to include(subject)
-        end
-
-    end
-
-    it "has a .reading_list method" do
-        allow(Book).to receive(:reading_list)
-    end
-    
-    describe ".reading_list" do
-        it "returns the class variable @@reading_list" do
-           Book.class_variable_set(:@@reading_list, [subject])
-           expect(Book.reading_list).to match_array([subject])
-        end
-    end
 end

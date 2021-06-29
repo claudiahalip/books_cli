@@ -19,8 +19,14 @@ Start the application by running:
  ` ruby bin/start `
 
 ## Start the test by running:
-
+ 
  ` rspec `
+ or
+ ` rspec spec/api_spec.rb  `
+ ` rspec spec/cli_spec.rb  `
+ ` rspec spec/book_spec.rb  `
+ ` rspec spec/readingList_spec.rb  `
+
 
 ## How to use the program
 
@@ -30,7 +36,7 @@ Book_CLI will provide all of the necessary prompts - they are listed here:
 - To exit the program type 'exit'.
 - To search for books write down your query.
 - To see your reading list type 'reading list'.
-- -After introducing the query the application will only pull 5 books at a time. 
+- After introducing the query the application will only pull 5 books at a time. 
 - A book can be selected by the number associated with the book.
 - You can see the selection made by typing 'reading list'.
 - You also can make a new search, make a new selection or exit the program. 

@@ -28,8 +28,8 @@ class CLI
             API.fetch_books(user_input) 
             display_list_of_books
             puts "Instructions:"
-            puts "To add a book into your reading list type the associated number with the book(any number between 1-5)."
-            puts "To exit, see your reading list, or continue searching, press any other key. "
+            puts "To add a book into your reading list type the associated number with the book(any number between 1 and 5)."
+            puts "To go back to the instructions, press any other key. "
             
             input = gets.strip.to_i - 1
             if input.between?(0,Book.all.length-1)
@@ -40,7 +40,7 @@ class CLI
         end
     end
 
-     def display_list_of_books
+    def display_list_of_books
         if !Book.all.empty?
             Book.all.each.with_index do |book, index|
                 puts "#{index + 1}. Title: #{book.title}"
@@ -48,6 +48,10 @@ class CLI
                 puts "Publishing company: #{book.publisher}"
                 puts "---------------------"
             end
+        else
+            puts "Invalid query, please try again!"
+            puts "================================"
+            menu
         end
     end
 
