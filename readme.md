@@ -18,7 +18,7 @@ Start the application by running:
 
  ` ruby bin/start `
 
-## Run the tests
+## Running the tests
 
  for running all the tests:
 
@@ -44,7 +44,7 @@ Book_CLI will provide all of the necessary prompts - they are listed here:
 - To search for books write down your query.
 - To see your reading list type 'reading list'.
 - After introducing the query the application will only pull 5 books at a time. 
-- A book can be selected by the number associated with the book.
+- A book can be selected by the number associated with the book(a number between 1 and 5).
 - You can see the selection made by typing 'reading list'.
 - You also can make a new search, make a new selection or exit the program. 
 
