@@ -15,7 +15,7 @@ class CLI
 
         Book.clear
         user_input = gets.strip.downcase
-        if user_input == "%" 
+        if user_input == "%" || user_input[-1] == "%"
             puts "Invalid query, try again!"
             menu
         elsif user_input == "exit"

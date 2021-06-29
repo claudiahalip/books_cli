@@ -21,9 +21,6 @@ class API
                     :publisher => book["volumeInfo"]["publisher"] == nil ?  "no publisher" : book["volumeInfo"]["publisher"]
                 )
             end
-        # else
-        #     puts "Invalid query, please try again!"
-            
         end
     end
     

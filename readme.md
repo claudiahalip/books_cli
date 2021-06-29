@@ -23,8 +23,11 @@ Start the application by running:
  ` rspec `
  or
  ` rspec spec/api_spec.rb  `
+
  ` rspec spec/cli_spec.rb  `
+
  ` rspec spec/book_spec.rb  `
+ 
  ` rspec spec/readingList_spec.rb  `
 
 
