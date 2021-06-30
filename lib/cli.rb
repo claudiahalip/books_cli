@@ -14,7 +14,7 @@ class CLI
         puts "To see your reading list type 'reading list'."
 
         Book.clear
-        user_input = gets.strip.downcase
+        user_input = gets.strip.downcase.gsub(/%/, "")
         if user_input == "exit"
             puts "Goodbye!"
             exit
@@ -31,7 +31,7 @@ class CLI
             input = gets.strip.to_i 
             if input.between?(0,9)
                 until input.between?(1,Book.all.length)
-                    puts "Invalid choice, press a number between 1 and 5. "
+                    puts "Invalid choice. Press a number between 1 - 5. "
                     input = gets.strip.to_i 
                 end
                 select_a_book(input-1)
@@ -50,7 +50,7 @@ class CLI
                 puts "---------------------"
             end
         else
-            puts "There is no result! Please try a different query."
+            puts "There is no result! Try a different query."
             puts "================================"
             menu
         end
